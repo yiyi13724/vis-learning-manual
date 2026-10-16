@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛软件学院25级新生</title>
+    <script src="../assets/vendor/d3.v7.min.js"></script>
+    <script src="utils/data.js"></script>
+    <script src="utils/table.js"></script>
+    <link rel="stylesheet" href="style/table.css">
+<link rel="stylesheet" href="../assets/case-frame.css"><link rel="icon" href="../assets/favicon.svg"></head>
+
+<body class="case-legacy"><nav class="case-return" aria-label="案例导航"><a href="./">← 返回案例库</a><span>教学案例 · 对照数据与图形解释结果</span><a href="../choose/">图表选型助手 →</a></nav>
+        <div id="app">
+        <h1>青岛软件学院25级新生</h1>
+        <div class="table-container">
+            <table id="data-table" class="data-table"></table>
+        </div>
+    </div>
+    <script>
+        // 启动渲染
+        main();
+        // 测试树渲染
+        async function main() {
+            try {
+                const students = await loadCSV();
+                renderTable(students,"#data-table");
+            } catch (error) {
+                console.error("渲染失败:", error);
+                d3.select("#tree-container").html(`<div style="color:red">加载失败: ${error.message}</div>`);
+            }
+        }
+        
+    </script>
+</body>
+</html>

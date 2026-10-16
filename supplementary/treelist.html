@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛软件学院25级新生</title>
+    <script src="../assets/vendor/d3.v7.min.js"></script>
+    <script src="utils/data.js"></script>
+    <script src="utils/treelist.js"></script>
+    <link rel="stylesheet" href="style/treelist.css">
+<link rel="stylesheet" href="../assets/case-frame.css"><link rel="icon" href="../assets/favicon.svg"></head>
+
+<body class="case-legacy"><nav class="case-return" aria-label="案例导航"><a href="./">← 返回案例库</a><span>教学案例 · 对照数据与图形解释结果</span><a href="../choose/">图表选型助手 →</a></nav>
+    <div class="chart-container">
+        <div class="title">青岛软件学院25级新生</div>
+        <div class="controls">
+            <button class="btn" onclick="expandAll(true)">展开全部</button>
+            <button class="btn" onclick="expandAll(false)">折叠全部</button>
+        </div>
+        <div id="tree-container"></div>
+    </div>
+
+    <script>
+        // 启动渲染
+        main();
+        // 测试树渲染
+        async function main() {
+            try {
+                const students = await load();
+                renderTree(mapToTreeStructure(students),nodeDisplay);
+            } catch (error) {
+                console.error("渲染失败:", error);
+                d3.select("#tree-container").html(`<div style="color:red">加载失败: ${error.message}</div>`);
+            }
+        }
+    </script>
+</body>
+
+</html>
