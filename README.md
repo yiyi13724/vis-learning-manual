@@ -2,6 +2,12 @@
 
 五章、27 个小节，覆盖数据、可视化流程、色彩、低维数据与时序数据。保留原讲义与示例，提供对照学习、自测、笔记、书签和复习工具。纯静态站点，无视频、账号或数据库。
 
+## 发布地址与来源
+
+- 公开访问：https://yiyi13724.github.io/vis-learning-manual/
+- 源码仓库：https://github.com/yiyi13724/vis-learning-manual
+- 原课程项目：https://github.com/cinger007/vis 。保留原课程作者与教材信息，本仓库为独立重构版本。
+
 ## 本地运行
 
 在仓库根目录运行：
